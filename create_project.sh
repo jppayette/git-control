@@ -12,6 +12,7 @@ cat << EOF >> README.md
 # ${projectName}
 EOF
 
+
 cat << EOF >> .gitignore 
 vendor/
 node_modules/
@@ -24,7 +25,12 @@ public/hot
 .env.*.php
 .env.php
 .env
+
+.gitignore
+.rsyncignore
 EOF
+
+cp .gitignore .cat
 
 cat << EOF >> LICENSE
 MIT License
