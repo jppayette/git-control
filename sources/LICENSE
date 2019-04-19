@@ -1,38 +1,3 @@
-#!/bin/bash
-
-read -p "Enter project name : " projectName
-
-mkdir ${projectName}
-cd ${projectName}
-git init
-
-cat << EOF >> README.md
-![screenshoot.jpg](screenshoot.jpg)
-
-# ${projectName}
-EOF
-
-
-cat << EOF >> .gitignore 
-vendor/
-node_modules/
-npm-debug.log
-
-app/storage/
-
-public/storage
-public/hot
-.env.*.php
-.env.php
-.env
-
-.gitignore
-.rsyncignore
-EOF
-
-cp .gitignore .cat
-
-cat << EOF >> LICENSE
 MIT License
 
 Copyright (c) 2019 Jean Patrick Payette
@@ -54,10 +19,3 @@ AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
-EOF
-
-git add *
-git commit -m 'Initial Commit'
-
-git remote add origin git@github.com:jppayette/${projectName}.git
-git push --force --set-upstream origin master
